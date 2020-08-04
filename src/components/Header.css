@@ -1,9 +1,13 @@
 .header {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     padding: 20px;
     border-bottom: 1px solid lightgrey;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
 }
 
 .header:hover {
@@ -11,7 +15,13 @@
 }
 
 .header__logo {
-    height: 35px;
+    height: 40px;
     object-fit: contain;
-    margin-left: 10px
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+.header__button {
+    border: 15px solid yellow;
+    /* color: blue; */
 }
