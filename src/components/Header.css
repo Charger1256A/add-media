@@ -21,7 +21,11 @@
     border-radius: 50%;
 }
 
-.header__button {
-    border: 15px solid yellow;
-    /* color: blue; */
+.app__signup {
+    display: flex;
+    flex-direction: column;
+  }
+
+.header__right {
+    display: flex;
 }
