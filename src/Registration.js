@@ -1,9 +1,9 @@
 import React from 'react';
 import './registration.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
-import Input from '@material-ui/core/Input';
+import { Button, Input } from '@material-ui/core'
 import fire from './firebase';
+import logo from './assets/logo.png';
 
 
 
@@ -39,17 +39,16 @@ class Registration extends React.Component {
 
             <div className="container">
                 <form>
+                    <img
+                        src={logo}
+                        alt="logo"
+                        />
                     <div className="input">
-                        <label>
-                            email
-                        <Input name="email" type="text" onChange={(e) => this.setState({ email: e.target.value })} />
-                        </label>
+                        <Input name="email" type="text" placeholder="email" onChange={(e) => this.setState({ email: e.target.value })} />
                     </div>
                     <div className="input">
-                        <label>
-                            password
-                        <Input name="password" type="password" onChange={(e) => this.setState({ password: e.target.value })} />
-                        </label>
+                       
+                        <Input name="password" type="password" placeholder="password" onChange={(e) => this.setState({ password: e.target.value })} />
                     </div>
                     <div>
                         <Button variant="primary" onClick={this.signUp}>Sign Up</Button>
