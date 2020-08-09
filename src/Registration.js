@@ -13,7 +13,8 @@ class Registration extends React.Component {
 
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            username: '',
         }
         this.login = this.login.bind(this);
         this.signUp = this.signUp.bind(this);
@@ -23,14 +24,20 @@ class Registration extends React.Component {
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
 
         }).catch((error) => {
-            console.log(error);
+            alert(error.message);
         });
     }
 
     signUp(e) {
         e.preventDefault();
-        fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch((error) => {
-            console.log(error);
+        fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+        .then((authUser) => {
+            return authUser.user.updateProfile({
+                displayName: this.state.username
+            })
+        })
+        .catch((error) => {
+            alert(error.message);
         })
     }
 
@@ -43,6 +50,9 @@ class Registration extends React.Component {
                         src={logo}
                         alt="logo"
                         />
+                    <div className="input">
+                        <Input name="username" placeholder="username(signup only)" onChange={(e) => this.setState({ username: e.target.value })}/>
+                    </div>
                     <div className="input">
                         <Input name="email" type="text" placeholder="email" onChange={(e) => this.setState({ email: e.target.value })} />
                     </div>

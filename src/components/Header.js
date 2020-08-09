@@ -12,8 +12,7 @@ class Header extends React.Component {
         super(props);
         this.logout = this.logout.bind(this);
         this.state = {
-            openSignUpModal: false,
-            openSignInModal: false,
+            createPost: false,
             username: '',
             email: '',
             password: '',
@@ -24,15 +23,12 @@ class Header extends React.Component {
     logout(e) {
         fire.auth().signOut();
     }
-
-   
-
-
-
     render() {
+
+         
+
         return (
             <div className="header">
-
                 <img
                     className="header__logo"
                     src={logo}
@@ -43,6 +39,7 @@ class Header extends React.Component {
                 <div>
                     
                         <div className="header__right">
+                            <Button>{this.props.username}</Button>
                             <Button onClick={this.logout}>Logout</Button>
                         </div>
                            

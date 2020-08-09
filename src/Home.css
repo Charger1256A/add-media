@@ -1,0 +1,22 @@
+.app {
+    display: flex;
+    flex-direction: row;
+}
+
+.post__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.post__button {
+    position: sticky;
+    text-align: right;
+    bottom: 0;
+    z-index: 3;
+    padding: 10px;
+}
+
+.button {
+    background-color: '#fc644';
+    border-radius: 50%;
+}

@@ -32,7 +32,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        {this.state.user ? (<Home />) : (<Registration />)}
+        {this.state.user ? (<Home user={this.state.user}/>) : (<Registration />)}
         
       </div>
   
