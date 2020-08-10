@@ -20,3 +20,23 @@
     background-color: '#fc644';
     border-radius: 50%;
 }
+
+.modal__body {
+    display: flex;
+    justify-content: center;
+}
+
+.post__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.post__input {
+    margin-top: 10px;
+    width: 150%;
+}
+
+.url__type {
+    margin-top: 10px;
+    background: lightgray;
+}

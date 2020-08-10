@@ -45,7 +45,7 @@ class Registration extends React.Component {
         return (
 
             <div className="container">
-                <form>
+                <form className="register">
                     <img
                         src={logo}
                         alt="logo"
